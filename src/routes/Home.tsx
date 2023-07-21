@@ -9,7 +9,7 @@ function Home() {
   const newDate = day + "/" + month + "/" + year;
 
   return (
-    <div className="App">
+    <div className="Home">
       <header className="App-header">
         <h1>Gio! is your travel App</h1>
       </header>
@@ -17,7 +17,9 @@ function Home() {
         <h2>{newDate}</h2>
       </div>
       <div>
+        <a href="/booking">
         <h2>Booking</h2>
+        </a>
       </div>
       <div>
         <a href={"/budget"}>

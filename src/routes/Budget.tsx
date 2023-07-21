@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import "../App.css";
 import { textSpanIsEmpty } from "typescript";
 
-const Budget: React.FC<{}> = () => {
+ function Budget() {
   const [formNeg, setFormNeg] = useState<Boolean>(false);
   const [formPlus, setFormPlus] = useState<Boolean>(false);
-  const [negBudget, setNegBudget] = useState<string>("");
+  const [negBudget, setNegBudget] = useState<String>("");
   const [negCategories, setNegCategories] = useState<String>("");
   const [negInfo, setNegInfo] = useState<String>("");
-  const [plusBudget, setPlusBudget] = useState<Number>(0);
+  const [plusBudget, setPlusBudget] = useState<String>("");
   const [plusCategories, setPlusCategories] = useState<String>("");
-  const [sum, setSum] = useState<Number>(0);
+  const [sum, setSum] = useState<number>(0);
 
   function showFormNeg() {
     setFormNeg(true);
@@ -19,39 +19,45 @@ const Budget: React.FC<{}> = () => {
   function showFormPlus() {
     setFormPlus(true);
   }
+
   function handleSubmitFormNeg(e: React.FormEvent) {
     e.preventDefault();
     setFormNeg(false);
     const inputNegBudget = document.getElementById("price") as HTMLInputElement;
-    setNegBudget(inputNegBudget?.value);
+    setNegBudget(inputNegBudget.value);
 
     const inputNegCategorie = document.getElementById(
-      "categoreisNeg"
-    ) as HTMLSelectElement
-    
+      "categoriesNeg"
+    ) as HTMLSelectElement;
+    setNegCategories(inputNegCategorie?.value);
 
     const textareaNeg = document.getElementById("more") as HTMLTextAreaElement;
     setNegInfo(textareaNeg?.value);
 
-    // const sumNegBudget = (sum - inputNegBudget)
-    // setSum(sumNegBudget)
+    const sumNegBudget = sum - parseInt(inputNegBudget.value);
+    console.log(sumNegBudget, "NEGBUDGET");
+    setSum(sumNegBudget);
   }
-  console.log("NEG FORM DATA", negBudget, negCategories, negInfo);
 
   function handleSubmitFormPlus(e: React.FormEvent) {
-    // e.preventDefault();
-    // setFormPlus(false);
-    // const inputPlusBudget = e.currentTarget.amount.value;
-    // const inputPlusCategorie = e.currentTarget.categoriesPlus.value;
-    // setPlusBudget(inputPlusBudget)
-    // setPlusCategories(inputPlusCategorie)
-    // const sumPlusBudget = (sum + inputPlusBudget)
-    // setSum(sumPlusBudget)
+    e.preventDefault();
+    setFormPlus(false);
+    const inputPlusBudget = document.getElementById(
+      "amount"
+    ) as HTMLInputElement;
+
+    const inputPlusCategorie = document.getElementById(
+      "categoriesPlus"
+    ) as HTMLSelectElement;
+    setPlusCategories(inputPlusCategorie?.value);
+
+    const sumPlusBuget = sum + inputPlusBudget.value;
+    console.log(sumPlusBuget, "BudgetPLIS!!");
+    setSum(parseInt(sumPlusBuget));
   }
-  console.log(sum);
 
   const budgetFormPlus = formPlus ? (
-    <form name="formPlus" onSubmit={handleSubmitFormPlus}>
+    <form className="formPlus" onSubmit={handleSubmitFormPlus}>
       <label htmlFor="categoriesPlus">Add to your budget</label>
       <select id="categoriesPlus" name="categoriesPlus">
         <option value="startBudgte">Start Budget</option>
@@ -67,7 +73,10 @@ const Budget: React.FC<{}> = () => {
   );
 
   const budgetFormNeg = formNeg ? (
-    <form onSubmit={handleSubmitFormNeg} name="formNeg">
+    <form
+      className="formNeg"
+      onSubmit={handleSubmitFormNeg}
+    >
       <label htmlFor="categoriesNeg">Choos a categorie</label>
       <select name="categoriesNeg" id="categoriesNeg">
         <option value="transports">Transports</option>
@@ -91,13 +100,15 @@ const Budget: React.FC<{}> = () => {
   );
   return (
     <>
-      <div>
+      <div className="budget">
+        <h2>Check your Budget $</h2>
         <button onClick={showFormPlus}> + </button>
         <button onClick={showFormNeg}> - </button>
-        {/* <p>Total: {sum}</p> */}
-      </div>
-      {budgetFormNeg}
+        {budgetFormNeg}
       {budgetFormPlus}
+        <p>Total: {sum}</p>
+      </div>
+      
     </>
   );
 };

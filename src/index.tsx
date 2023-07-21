@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Budget from "./routes/Budget";
 import ErrorPage from "./error-page";
+import Booking from "./routes/Booking";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
     path: "Budget",
     element: <Budget />,
   },
+  {
+    path:"Booking",
+    element: <Booking/>
+  }
 ]);
 
 const root = ReactDOM.createRoot(

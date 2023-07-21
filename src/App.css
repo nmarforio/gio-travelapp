@@ -1,29 +1,44 @@
-.App {
-  background-color: #282c34;
+.Home {
   text-align: center;
   display: grid;
   height: 100vh;
-  color: antiquewhite;
 }
-
-
 
 @media (prefers-reduced-motion: no-preference) {
-  
 }
 
-.App-header {
-  background-color: #282c34;
+.Home-header {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: antiquewhite
+ 
+}
+.budget{
+  background-color: #282c34;
+  display: grid;
+  justify-items: center;
+}
+.formNeg {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+}
+.formPlus {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.booking{
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+}
+.bookingForm{
+  display: grid;
+  justify-items: center;
 }
 
 @keyframes App-logo-spin {
