@@ -11,7 +11,7 @@ function Home() {
   return (
     <div className="Home">
       <header className="App-header">
-        <h1>Gio! is your travel App</h1>
+        <h1>Gio! your travel App</h1>
       </header>
       <div>
         <h2>{newDate}</h2>
@@ -32,7 +32,9 @@ function Home() {
         </a>
       </div>
       <div>
-        <h2>Map</h2>
+        <a href="/map">
+          <h2>Map</h2>
+        </a>
       </div>
     </div>
   );

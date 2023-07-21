@@ -6,7 +6,19 @@
 
 @media (prefers-reduced-motion: no-preference) {
 }
-
+.menu {
+  display: grid;
+  margin-left: 30px;
+  background-color: antiquewhite;
+  width: 100px;
+  border-radius: 8px;
+  justify-content: center;
+  height: 100px;
+  margin-top: 20px;
+}
+.homeLink{
+  margin-top: 5px;
+}
 .Home-header {
   display: flex;
   flex-direction: column;
@@ -46,8 +58,20 @@
   align-items: center;
   justify-content: space-evenly;
 }
-.bookingButton{
+.bookingButton {
   margin-top: 30px;
+}
+.activitiesForm {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+}
+.buketList {
+  display: grid;
+  justify-content: center;
+}
+
+.mapDiv{
   
 }
 

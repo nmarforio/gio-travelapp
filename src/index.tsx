@@ -8,6 +8,7 @@ import Budget from "./routes/Budget";
 import ErrorPage from "./error-page";
 import Booking from "./routes/Booking";
 import BuketList from "./routes/BuketList";
+import MapPage from "./routes/Map";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
   {
     path: "Buketlist",
     element: <BuketList />,
+  },
+  {
+    path: "Map",
+    element: <MapPage />,
   },
 ]);
 

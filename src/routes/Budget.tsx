@@ -100,6 +100,11 @@ import { textSpanIsEmpty } from "typescript";
   );
   return (
     <>
+    <div className="menu">
+      <a className="homeLink" href="/">Home</a>
+      <a href="/booking">Booking</a>
+      <a href="/buketlist">Buket List</a>
+    </div>
       <div className="budget">
         <h2>Check your Budget $</h2>
         <button onClick={showFormPlus}> + </button>

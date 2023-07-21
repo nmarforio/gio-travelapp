@@ -25,6 +25,12 @@ function Booking() {
   }
   
   return (
+    <>
+    <div className="menu">
+      <a className="homeLink" href="/">Home</a>
+      <a href="/budget">Budget</a>
+      <a href="/buketlist">BuketList</a>
+    </div>
     <div className="booking">
       <h1>Booking</h1>
       <form className="bookingForm" onSubmit={handleBookingSubmit}>
@@ -62,6 +68,7 @@ function Booking() {
         </button>
       </form>
     </div>
+    </>
   );
 }
 
