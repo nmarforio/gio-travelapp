@@ -13,9 +13,8 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
- 
 }
-.budget{
+.budget {
   background-color: #282c34;
   display: grid;
   justify-items: center;
@@ -31,14 +30,25 @@
   justify-items: center;
 }
 
-.booking{
+.booking {
   display: grid;
   justify-content: center;
   justify-items: center;
 }
-.bookingForm{
+.bookingForm {
   display: grid;
   justify-items: center;
+}
+.calendarBooking {
+  margin-top: 30px;
+  display: flex;
+  width: 500px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.bookingButton{
+  margin-top: 30px;
+  
 }
 
 @keyframes App-logo-spin {
