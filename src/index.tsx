@@ -7,21 +7,26 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Budget from "./routes/Budget";
 import ErrorPage from "./error-page";
 import Booking from "./routes/Booking";
+import BuketList from "./routes/BuketList";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
-    errorElement:<ErrorPage/>
+    errorElement: <ErrorPage />,
   },
   {
     path: "Budget",
     element: <Budget />,
   },
   {
-    path:"Booking",
-    element: <Booking/>
-  }
+    path: "Booking",
+    element: <Booking />,
+  },
+  {
+    path: "Buketlist",
+    element: <BuketList />,
+  },
 ]);
 
 const root = ReactDOM.createRoot(

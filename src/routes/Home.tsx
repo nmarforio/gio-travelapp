@@ -18,7 +18,7 @@ function Home() {
       </div>
       <div>
         <a href="/booking">
-        <h2>Booking</h2>
+          <h2>Booking</h2>
         </a>
       </div>
       <div>
@@ -27,7 +27,9 @@ function Home() {
         </a>
       </div>
       <div>
-        <h2>To do List</h2>
+        <a href="/buketlist">
+          <h2>Buket List</h2>
+        </a>
       </div>
       <div>
         <h2>Map</h2>
