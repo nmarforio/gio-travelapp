@@ -24,6 +24,9 @@ function Booking() {
     setCountry(countryInput?.value)
   }
   
+  const linkBooking: Array<string> = ["https://www.booking.com","https://www.hostelworld.com","https://www.airbnb.com"]
+
+
   return (
     <>
     <div className="menu">
@@ -67,6 +70,15 @@ function Booking() {
           Save your Stay
         </button>
       </form>
+      <div className="bookingLinks">
+      {linkBooking.map((link)=>{
+        return (
+          <a href={link}>{link}</a>
+        )
+      })}
+      <button>Add new link</button>
+      <button>Delete link</button>
+      </div>
     </div>
     </>
   );
