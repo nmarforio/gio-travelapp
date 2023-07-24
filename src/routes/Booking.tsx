@@ -27,7 +27,7 @@ function Booking() {
 //   const handleOnSubmit = async (e) => {
 //     e.preventDefault();
 //     let result = await fetch(
-//     'http://localhost:5000/register', {
+//     'http://localhost:5000', {
 //         method: "post",
 //         body: JSON.stringify({ }),
 //         headers: {
