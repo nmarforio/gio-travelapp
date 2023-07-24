@@ -12,7 +12,7 @@ function Booking() {
 
     console.log(city,direction, zipCode,country, selectedArrival,selectedDeparture)
 
-  function handleBookingSubmit(e: React.FormEvent){
+  async function handleBookingSubmit(e: React.FormEvent){
     e.preventDefault()
     const cityInput = document.getElementById("city") as HTMLInputElement
     setCity(cityInput?.value)
@@ -24,6 +24,24 @@ function Booking() {
     setCountry(countryInput?.value)
   }
   
+//   const handleOnSubmit = async (e) => {
+//     e.preventDefault();
+//     let result = await fetch(
+//     'http://localhost:5000/register', {
+//         method: "post",
+//         body: JSON.stringify({ }),
+//         headers: {
+//             'Content-Type': 'application/json'
+//         }
+//     })
+//     result = await result.json();
+//     console.warn(result);
+//     if (result) {
+//         alert("Data saved succesfully");
+//     }
+// }
+
+
   const linkBooking: Array<string> = ["https://www.booking.com","https://www.hostelworld.com","https://www.airbnb.com"]
 
 

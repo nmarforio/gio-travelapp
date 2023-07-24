@@ -1,11 +1,11 @@
 // To connect with your mongoDB database
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/', {
-	dbName: 'yourDB-name',
+	dbName: 'Gio-Travelapp',
 	useNewUrlParser: true,
 	useUnifiedTopology: true
 }, err => err ? console.log(err) :
-	console.log('Connected to yourDB-name database'));
+	console.log('Connected to Gio-Travelapp database'));
 
 // Schema for users of app
 const UserSchema = new mongoose.Schema({
