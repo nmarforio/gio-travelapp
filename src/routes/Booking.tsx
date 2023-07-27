@@ -3,7 +3,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useState } from "react";
 
 function Booking() {
-  const [selectedArrival, setSelectedArrival] = useState<Date| null>(null);
+  const [selectedArrival, setSelectedArrival] = useState<Date | null>(null);
   const [selectedDeparture, setSelectedDeparture] = useState<Date | null>(null);
   const [city, setCity] = useState<string>("");
   const [direction, setDirection] = useState<string>("");
@@ -28,21 +28,20 @@ function Booking() {
     setZipCode(zipCodeInput?.value);
     const countryInput = document.getElementById("country") as HTMLInputElement;
     setCountry(countryInput?.value);
-  }
-  const bookingObject: object = {
-    city: city,
-    direction: direction,
-    zipCode: zipCode,
-    country: country,
-    selectedArrival: selectedArrival,
-    selectedDeparture: selectedDeparture,
-  };
 
-  async function handleBookingSubmit1 (e: React.FormEvent) {
-      e.preventDefault();
-      let result = await fetch("http://localhost:5000", {
+    const bookingObject: object = {
+      arrival: selectedArrival,
+      departure: selectedDeparture,
+      city: city,
+      direction: direction,
+      zipCode: zipCode,
+      country: country,
+    };
+    
+
+    let result = await fetch("http://localhost:5000/booking", {
       method: "post",
-      body: JSON.stringify({bookingObject}),
+      body: JSON.stringify(bookingObject!),
       headers: {
         "Content-Type": "application/json",
       },
@@ -51,8 +50,9 @@ function Booking() {
     console.warn(result);
     if (result) {
       alert("Data saved succesfully");
+      console.log(result);
     }
-  };
+  }
 
   const linkBooking: Array<string> = [
     "https://www.booking.com",
@@ -71,7 +71,7 @@ function Booking() {
       </div>
       <div className="booking">
         <h1>Booking</h1>
-        <form className="bookingForm" onSubmit={(e)=>handleBookingSubmit}>
+        <form className="bookingForm" onSubmit={(e) => handleBookingSubmit(e)}>
           <label>Where is your Stay:</label>
           <input required placeholder="City" type="text" id="city"></input>
           <label>Direction:</label>
@@ -117,7 +117,11 @@ function Booking() {
         </form>
         <div className="bookingLinks">
           {linkBooking.map((link) => {
-            return <a href={link}>{link}</a>;
+            return (
+              <a key={link} href={link}>
+                {link}
+              </a>
+            );
           })}
           <button>Add new link</button>
           <button>Delete link</button>
